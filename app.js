@@ -3,7 +3,8 @@ var app = express();
 
 // Routes
 app.get('/', function(req, res) {
-  res.send('Hello World!');
+  const message = process.env.HELLO_MESSAGE || 'Hello World';
+  res.send(message);
 });
 
 // Listen
