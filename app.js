@@ -1,8 +1,10 @@
 var express = require('express');
 var app = express();
 
+const route = '/' + ( process.env.ROUTE || '' );
+
 // Routes
-app.get('/', function(req, res) {
+app.get(route, function(req, res) {
   const message = process.env.HELLO_MESSAGE || 'Hello World';
   res.send(message);
 });
